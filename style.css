@@ -23,8 +23,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  overflow: hidden;
 }
 
 body::before {
@@ -96,7 +94,7 @@ img {
 .balloon {
   position: absolute;
   bottom: -150px;
-  width: 100px;
+  width: 200px;
   height: auto;
   animation: float 8s ease-in-out forwards;
   pointer-events: none;
