@@ -100,6 +100,14 @@ img {
   filter: blur(0.9px);
 }
 
+.balloon-wrapper {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1; /* above content */
+}
+
 .balloon {
   position: absolute;
   bottom: -150px;

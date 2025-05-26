@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="balloon-wrapper"></div>
+
     <header>
       <h1>My</h1>
       <h1>Love</h1>
@@ -28,26 +30,26 @@
     </main>
 
     <script>
-      window.onload = () => {
-        const balloonCount = 80; // More balloons
-        const imageUrl =
-          "https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Balloons-PNG/Transparent_Balloons_PNG_Picture.png?m=1629782594";
+      const balloonWrapper = document.querySelector(".balloon-wrapper");
+      const balloonCount = 80;
+      const imageUrl =
+        "https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Balloons-PNG/Transparent_Balloons_PNG_Picture.png?m=1629782594";
 
-        for (let i = 0; i < balloonCount; i++) {
-          const balloon = document.createElement("img");
-          balloon.src = imageUrl;
-          balloon.className = "balloon";
-          balloon.style.left = Math.random() * 100 + "vw";
-          balloon.style.animationDelay = Math.random() * 3 + "s"; // Slightly longer random delays
-          const scale = 0.8 + Math.random() * 0.5; // Slight size variation
-          balloon.style.transform = `scale(${scale})`;
-          document.body.appendChild(balloon);
+      for (let i = 0; i < balloonCount; i++) {
+        const balloon = document.createElement("img");
+        balloon.src = imageUrl;
+        balloon.className = "balloon";
+        balloon.style.left = Math.random() * 100 + "vw";
+        balloon.style.animationDelay = Math.random() * 3 + "s";
+        const scale = 0.8 + Math.random() * 0.5;
+        balloon.style.transform = `scale(${scale})`;
 
-          setTimeout(() => {
-            balloon.remove();
-          }, 8000); // 8s animation + up to 3s delay buffer
-        }
-      };
+        balloonWrapper.appendChild(balloon);
+
+        setTimeout(() => {
+          balloon.remove();
+        }, 8000);
+      }
     </script>
   </body>
 </html>
