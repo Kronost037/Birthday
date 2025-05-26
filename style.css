@@ -22,7 +22,8 @@ body {
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center; /* vertical center */
+  align-items: center; /* horizontal center */
 }
 
 body::before {
@@ -48,6 +49,8 @@ header {
 
   padding: 1rem;
   text-transform: uppercase;
+
+  margin-bottom: 1rem; /* spacing below header */
 }
 
 h1 {
@@ -69,13 +72,19 @@ nav ul {
 
 nav a {
   text-decoration: none;
+  color: inherit;
 }
 
 main {
-  min-width: 70vw;
+  width: 90vw;
+  max-width: 600px;
+
   display: grid;
   place-content: center;
   text-align: center;
+
+  /* Optional: add some vertical padding */
+  padding: 1rem 0;
 }
 
 h2 {
@@ -108,5 +117,59 @@ img {
   100% {
     transform: translateY(-130vh) scale(0.7);
     opacity: 0;
+  }
+}
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  nav {
+    font-size: 1.2rem;
+  }
+
+  nav ul {
+    gap: 2vw;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main {
+    width: 95vw;
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  .balloon {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  nav {
+    font-size: 1rem;
+  }
+
+  main {
+    width: 95vw;
+    padding: 0.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .balloon {
+    width: 80px;
   }
 }
